@@ -4,13 +4,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.example.kadai.event.PressBtnEventPublisher;
+import com.example.kadai.event.ButtonPressEventPublisher;
 
 @Controller
 public class EventController {
-	private final PressBtnEventPublisher eventPublisher;
+	private final ButtonPressEventPublisher eventPublisher;
 
-	public EventController(PressBtnEventPublisher eventPublisher) {
+	public EventController(ButtonPressEventPublisher eventPublisher) {
 		this.eventPublisher = eventPublisher;
 	}
 	

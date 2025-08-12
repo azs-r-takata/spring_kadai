@@ -1,19 +1,17 @@
 package com.example.kadai.event;
 
 import org.springframework.context.ApplicationEventPublisher;
-import org.springframework.scheduling.annotation.EnableScheduling;
 import org.springframework.stereotype.Component;
 
 import lombok.RequiredArgsConstructor;
 
 @Component
 @RequiredArgsConstructor
-@EnableScheduling
-public class PressBtnEventPublisher {
+public class ButtonPressEventPublisher {
 	private final ApplicationEventPublisher applicationEventPublisher;
 	
 	public void publishPressBtnEvent() {
-		PressBtnEvent event = new PressBtnEvent(this);
+		ButtonPressEvent event = new ButtonPressEvent(this);
 		applicationEventPublisher.publishEvent(event);
 	}
 }

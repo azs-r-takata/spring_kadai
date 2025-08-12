@@ -11,26 +11,23 @@
 		
 		<form th:action="@{/confirm}" method="get" th:object="${contactForm}">
 			<table border="0">
-				<col align="right">
-				
-					<colgroup>
-					<th><label for="name">お名前</label></th>
-					<td><input type="text" th:field="*{name}"></td>
-					</colgroup>
-					<tr><th></th><td th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color:red;"></td><tr>
+				<colgroup>
+				<th><label for="name">お名前</label></th>
+				<td><input type="text" th:field="*{name}"></td>
+				</colgroup>
+				<tr><th></th><td th:if="${#fields.hasErrors('name')}" th:errors="*{name}" style="color:red;"></td></tr>
 
-					<colgroup>
-					<th><label for="email">メールアドレス</label></th>
-			        <td><input type="text" th:field="*{email}"></td>
-			        </colgroup>
-			        <tr><th></th><td th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color:red;"></td></tr>
+				<colgroup>
+				<th><label for="email">メールアドレス</label></th>
+			    <td><input type="text" th:field="*{email}"></td>
+			    </colgroup>
+			    <tr><th></th><td th:if="${#fields.hasErrors('email')}" th:errors="*{email}" style="color:red;"></td></tr>
 			        
-					<colgroup>
-					<th><label for="messages">お問い合わせ内容</label></th>
-					<td><textarea rows="10" cols="30" th:field="*{messages}"></textarea></td>
-					</colgroup>
-					<tr><th></th><td th:if="${#fields.hasErrors('messages')}" th:errors="*{messages}" style="color:red;"></td></tr>
-				</col>
+				<colgroup>
+				<th><label for="messages">お問い合わせ内容</label></th>
+				<td><textarea rows="10" cols="30" th:field="*{messages}"></textarea></td>
+				</colgroup>
+				<tr><th></th><td th:if="${#fields.hasErrors('messages')}" th:errors="*{messages}" style="color:red;"></td></tr>
 					
 				<td><button type="submit">送信</button></td>
 			</table>
