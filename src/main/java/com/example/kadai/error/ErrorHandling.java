@@ -13,12 +13,10 @@ public class ErrorHandling {
 	
 	@ExceptionHandler(Exception.class)
 	@ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
-	public String handleException(Exception ex) {
+	public void handleException(Exception ex) {
 		
-		log.error("[ERROR] - 配列の要素外参照が発生しました。メソッド名：{}, メッセージ：{}",
+		log.error("配列の要素外参照が発生しました。メソッド名：{}, メッセージ：{}",
 				ex.getStackTrace()[0].getMethodName(),
 				ex.getMessage());
-		
-		return "errorView";
 	}
 }
